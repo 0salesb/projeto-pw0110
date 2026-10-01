@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professores</title>
+    <script>
+        let contadorChave = 0;
+        function exibirvariavel() {
+        let nome = document.getElementById("nome").value
+
+        alert(nome)
+        }
+
+        function salvarlocalmente() {
+            let nome = document.getElementById("nome").value
+            let materia = document.getElementById("materia").value
+            localStorage.setItem(contadorChave, nome)
+            contadorChave = contadorChave + 1
+        }
+
+        function ListarLocal() {
+            let pesquisarchave = document.getElementById("pesquisarchave").value
+            alert(localStorage.getItem(pesquisarchave));
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="nome" placeholder="Insira o nome do professor aqui">
+     <input type="text" id="materia" placeholder="Insira o nome da matéria aqui">
+    <input type="text" id="pesquisarchave" placeholder="Insira a chave de pesquisa">
+    <input type="button" id="btn" value="Clique Aqui" onclick="exibirvariavel()">
+    <input type="button" id="btn2" value="Salvar no localstorage" onclick="salvarlocalmente()">
+    <input type="button" id="btn3" value="Listar localstorage" onclick="ListarLocal()">
+</body>
+</html>
